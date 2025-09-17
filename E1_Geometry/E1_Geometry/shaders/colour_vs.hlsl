@@ -27,12 +27,15 @@ OutputType main(InputType input)
 	
 	// Change the position vector to be 4 units for proper matrix calculations.
 	input.position.w = 1.0f;
-    
+    input.position.x *= 5;
+    input.position.y *= 5;
+    input.position.z *= 5;
+	
 	// Calculate the position of the vertex against the world, view, and projection matrices.
 	output.position = mul(input.position, worldMatrix);
 	output.position = mul(output.position, viewMatrix);
 	output.position = mul(output.position, projectionMatrix);
-
+	
 	output.colour = input.colour;
 	
 
